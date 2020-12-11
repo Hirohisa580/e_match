@@ -11,4 +11,6 @@ class Board < ApplicationRecord
     validates :name
     validates :explanation
   end
+
+  validates :genre_one_id, numericality: { other_than: 1 }
 end
