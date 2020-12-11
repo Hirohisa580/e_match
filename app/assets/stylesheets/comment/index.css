@@ -1,0 +1,77 @@
+
+
+
+.box5 {
+  border: solid 2px black;
+  height: 100vh;
+}
+.box6 {
+  border: solid 2px black;
+  height: 100vh;
+}
+
+
+.comment__main {
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 10px;
+  height: 90%;
+  width: 90%;
+  margin-left: 34px;
+  margin: 30px 0px 0px 34px;
+  overflow: scroll;
+}
+
+.side__main{
+  /* background-color: yellow; */
+  height: 95%;
+  width: 90%;
+  margin-top: 30px;
+  margin-left: 15px;
+  
+}
+
+.side__explanation {
+  background-color: lightyellow;
+  height: 60%;
+  border: solid black 2px;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+.side__form {
+  margin-top: 50px;
+}
+.comment__form {
+  height: 10vh;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 15px;
+}
+.comment__submit {
+  width: 50%;
+  margin-left: 25%;
+  height: 6vh;
+}
+
+.comment__comment {
+  border: solid black 1px;
+  margin: 15px;
+}
+
+.comment__exp {
+  margin: 15px;
+}
+
+.comment__name {
+  margin: 15px 15px 0px 15px;
+}
+
+.edit__flex {
+  display: flex;
+  justify-content: flex-end;
+}
+.comment__edit {
+  color: lightgray;
+  margin-right: 1vw
+}

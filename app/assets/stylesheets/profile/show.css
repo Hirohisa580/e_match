@@ -1,0 +1,81 @@
+.profile__wrapper{
+  min-height: calc(100vh - 161px);
+  background-image: url(https://ferret.akamaized.net/images/59e76165fafbd876ce00035c/original.jpg?1508335973);
+}
+.profile__hedding{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.profile__user{
+  display: block;
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+}
+.profile__image{
+  width: 40%;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+.profile__detail{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+.detail__title{
+  font-size: 20px;
+  font-weight: bold;
+}
+.profile__manage{
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 40px;
+}
+
+.profile__btn{
+  display: block;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
+.profile__btn:hover{
+  color: #fff;
+  background: #999;
+}
+.public__border {
+  margin: 0px 300px 100px 300px;
+  padding: 15px 20px 30px 20px;
+  border: solid black 2px;
+  border-radius: 10px;
+  background-color: white;
+  overflow: scroll;
+}
+.public__main {
+  width: 30vw;
+  margin: auto;
+  height: 30vh;
+}
+
+.profile__direct {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+
+.image__preview {
+  height: 2.5vh
+}
+

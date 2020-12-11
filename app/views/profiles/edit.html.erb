@@ -1,0 +1,90 @@
+
+  <div class="top-page">  
+    <%=render "shared/edit_header" %>
+  </div>
+    <div>
+        <h1 class="profile-title">プロフィール編集ページ</h1>
+    </div>
+    <div class="edit-main">
+      <div class="edit-border">
+        <%= form_with model: @profile, url:profile_path, id: 'message_image', local: true do |f| %>
+        <%#= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+          <div class="field area">
+            <label >ニックネーム（必須）<br /><label >
+            <%= f.text_field :nickname, autofocus: true, class: "form-control"%>
+          </div>
+
+          <div class="field area">
+            <label >年齢（任意）<br /><label >
+            <%= f.text_field :age, class: "form-control" %>
+          </div>
+
+          <div class="form-group area">
+              <div>
+                <label class="form-text">生年月日（任意）</label>
+              </div>
+              <div class='field birthday-form'>
+                <%= raw sprintf(
+                            f.date_select(
+                              :birthday,
+                              class:'select-birth',
+                              id:"birth-date",
+                              use_month_numbers: true,
+                              prompt:'--',
+                              start_year: 1930,
+                              end_year: (Time.now.year - 5),
+                              date_separator: '%s'),
+                            "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+              </div>
+          </div>
+
+          <div class="field area" >
+            <label >都道府県（必須）<br /><label >
+            <%= f.collection_select(:area_id, Area.all, :id, :name, {}, class: "form-control") %>
+          </div>
+
+          <div class="field area">
+            <label >芸歴（任意）<br /><label >
+            <%= f.text_field :history, placeholder: "例) 3年", class: "form-control"  %>
+          </div>
+
+          <div class="field area">
+            <label >自己紹介（任意）<br /><label >
+            <%= f.text_area :public_relation, placeholder: "例）オールラウンダーに活躍したいと思っております！よろしくお願いします！", class: "form-control"  %>
+          </div>
+
+          <div class= "genre">
+            <span>ジャンル</span> ※1つは必ず選んでください
+          </div>
+
+          <div class="field area" >
+            <label >（必須）<br /><label >
+            <%= f.collection_select(:genre_one_id, GenreOne.all, :id, :name, {}, class: "form-control") %>
+          </div>
+
+          <div class="field area" >
+            <label >（任意）<br /><label >
+            <%= f.collection_select(:genre_two_id, GenreTwo.all, :id, :name, {}, class: "form-control") %>
+          </div>
+
+          <div class="field area" >
+            <label >（任意）<br /><label >
+            <%= f.collection_select(:genre_three_id, GenreThree.all, :id, :name, {}, class: "form-control") %>
+          </div>
+
+          <div class="img-upload field">
+            <label >プロフィール写真<br /><label >
+            <%= f.file_field :image, id:"item-image"%>
+            <div id="image-list"></div>
+          </div>
+
+          <div class="actions field">
+            <%= f.submit "編集", class: "btn btn-success btn-lg mb-3"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+

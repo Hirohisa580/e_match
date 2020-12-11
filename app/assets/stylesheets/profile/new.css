@@ -1,0 +1,46 @@
+.new-border {
+  border: solid 2px black;
+  margin: 0px 200px 100px;
+  background-color: lightgoldenrodyellow;
+  padding-top: 30px;
+  border-radius: 10px;
+}
+
+.profile-title {
+  text-align: center;
+  padding-top: 70px;
+}
+
+.img-upload {
+  padding-bottom: 50px;
+}
+
+.form-text {
+  text-align: center;
+}
+
+.actions {
+  padding-bottom: 200px;
+}
+
+.weight-bold-text {
+  font-size: 30px;
+}
+
+.birthday-form {
+  margin-bottom:50px;
+}
+
+.genre {
+  text-align: center;
+}
+.genre span {
+  font-size: 20px;
+}
+
+.profile-form {
+  background-image: url(https://www.beiz.jp/images_T/white/white_00056.jpg);
+  background-size: cover;
+}
+
+

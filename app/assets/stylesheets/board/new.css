@@ -1,0 +1,25 @@
+.new__topic {
+  /* background-color: orange; */
+  padding: 20px 50px 50px 50px;
+  height: 90vh;
+  width: 600px;
+  margin: auto;
+}
+
+.board__form {
+  background-color: lightgoldenrodyellow;
+  border-radius: 10px;
+  border: solid 2px black;
+  padding: 50px;
+}
+
+
+#exampleFormControlTextarea1 {
+  height: 30vh;
+  overflow: scroll;
+  border: solid 1px black;
+}
+
+#board__submit {
+  margin-left: 300px;
+}

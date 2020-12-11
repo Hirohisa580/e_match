@@ -1,0 +1,84 @@
+<div class="top-page">  
+   <%=render "shared/header"%>
+</div>
+  <div class="all__main">
+    <div class="profile__wrapper">
+      <p class="profile__hedding">
+        <%= "#{@profile.nickname}"%>
+      </p>
+
+      <div class="profile__direct">
+        <% if current_page?(@user_profile) && @user_profile != nil%>
+          <%= link_to "DMルーム（現ユーザー）", dm_messages_path(:dm_id), class: :profile__btn %>            
+        <% elsif !@intersection.empty?%>
+          <%= link_to "DMルーム", dm_messages_path(@intersection), class: :profile__btn %> 
+        <% else %>
+            <%= form_with model: @dm, local: true do |f|%>
+              <input name="dm[user_ids][]" type="hidden" value=<%= @profile.user_id %>>
+              <input name="dm[user_ids][]" type="hidden" value=<%= current_user.id %>>
+              <%= f.submit "DMルーム（作成前）", class: :profile__btn %>
+            <% end %>
+        <% end %>
+      </div>
+
+      <div class="profile__image">
+        <%= image_tag @profile.image, class: "img-thumbnail"%>
+      </div>
+
+      <div class="profile__body">
+        <div class="profile__detail">
+          <p class="detail__title">年齢</p>
+          <p class="detail__message">
+            <%= "--#{@profile.age}歳--" %>
+          </p>
+        </div>
+
+        <div class="profile__detail">
+          <p class="detail__title">誕生日</p>
+          <p class="detail__message">
+            <%= "--#{@profile.birthday}--" %>
+          </p>
+        </div>
+
+        <div class="profile__detail">
+          <p class="detail__title">地域</p>
+          <p class="detail__message">
+            <%= "--#{@profile.area.name}--" %>
+          </p>
+        </div>
+
+        <div class="profile__detail">
+          <p class="detail__title">ジャンル</p>
+          <p class="detail__message">
+            <%= "#{@profile.genre_one.name}" %>、
+            <%= "#{@profile.genre_two.name}" %>、
+            <%= "#{@profile.genre_three.name}" %>
+          </p>
+        </div>
+
+        <div class="profile__detail">
+          <p class="detail__title">芸歴</p>
+          <p class="detail__message">
+            <%= "--#{@profile.history}年--" %>
+          </p>
+        </div>
+
+        <div class="profile__detail">
+          <p class="detail__title">自己紹介</p>
+          <div class="public__border">
+            <p class="detail__message public__main">
+              <%= "#{@profile.public_relation}" %>
+            </p>
+          </div>
+        </div>
+
+      </div>
+        <div class="profile__manage">
+          <% if current_user.id == @profile.user_id %>
+            <%= link_to "編集する", edit_profile_path(@profile.id), class: :profile__btn %>
+            <%= link_to "削除する", profile_path(@profile.id), method: :delete, class: :profile__btn %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+

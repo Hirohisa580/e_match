@@ -1,0 +1,40 @@
+<div class="top-page">
+  <%=render "shared/header"%>
+</div>
+
+<div class="all__main">
+  <ul class="board__new">
+    <li>
+      <%= link_to '新しく掲示板を建てる', new_board_path, class: "btn btn-outline-dark" %>
+    </li>
+  </ul>
+  <div class="row">
+    <div class="box3 col-6">
+      <div class='board__main'>
+        <h2 class='board__title'>掲示板タイトル一覧</h2><span class="remarks">※詳細をクリックで説明欄を開く。</span>     
+          <ul class="topic__lists">
+            <% @board_all.each do |board|%>
+              <div class="board" data-id=<%= board.id %> data-check=<%= board.checked%>>
+                <li class="topics">
+                  <%= link_to "#{board.name}", board_comments_path(board.id)%>
+                  <span class="badge badge-secondary" id= "topic__title">詳細</span>
+                  <% if board.user_id == current_user.id %>
+                    <span class="badge badge-secondary" id= "topic__title"><%= link_to '編集', edit_board_path(board), class: "topic__edit" %></span>
+                    <span class="badge badge-secondary" id= "topic__title"><%= link_to '削除', board_path(board), method: :delete, class: "topic__edit" %></span>
+                  <% end %>
+                </li>
+              </div>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+
+    <div class="box4 col-6">
+      <div class="exp__box">
+        <div id="exp__main">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

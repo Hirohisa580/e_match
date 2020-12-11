@@ -1,0 +1,18 @@
+  <div class="top-page">
+    <%=render "shared/header"%>
+  </div>
+  <div class="all__main">
+    <div class="container">
+      <div class="new__topic">
+        <div class="board__form">
+          <h2>掲示板作成</h2>
+          <%= form_with model:@board, class: "form__border",local: true do |f|%>
+          <p>カテゴリー（必須）<%= f.collection_select(:genre_one_id, GenreOne.all, :id, :name, {}, class: "form-control") %></p>
+            <p>タイトル（必須）<%= f.text_field :name, class: "form-control" %></p>    
+            <p>説明（必須）<%= f.text_area :explanation, class: "form-control", id: "exampleFormControlTextarea1" %></p>
+            <%= f.submit "作成", class: "btn btn-success btn-lg", id: "board__submit"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

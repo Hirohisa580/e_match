@@ -1,0 +1,48 @@
+<header>
+  <div class="container mb-3">
+    <div class="top-logo">
+      <a href="/"><span>E</span>-match</a>
+    </div>
+  </div>
+  <div>
+    <% if user_signed_in? && @profile_user_id.try(:include?, current_user.id)%>
+      <p class="login__user">ログイン中: <%=link_to "#{current_user.last_name}#{current_user.first_name}", "#"%> さん<p>
+      <ul class="nav nav-tabs">
+        <li>
+          <%= link_to 'トップページ', root_path, class: "nav-link header__link" %>
+        </li>
+        <li>
+          <%= link_to '掲示板', boards_path, class: "nav-link header__link" %>
+        </li>
+        <li>
+          <%= link_to 'マイページ', profile_path(@user_profile.id), class: "nav-link header__link" %>          
+        </li>
+        <li>
+          <%= link_to 'DMルーム', dm_messages_path(:dm_id), class: "nav-link header__link" %>          
+        </li>
+      </ul>
+    <% elsif user_signed_in? %>
+      <p class="login__user">ログイン中: <%=link_to "#{current_user.last_name}#{current_user.first_name}", "#"%> さん<p>
+      <ul class="nav nav-tabs">
+        <li>
+          <%= link_to 'トップページ', root_path, class: "nav-link header__link" %>
+        </li>
+        <li>
+          <%= link_to '掲示板', boards_path, class: "nav-link header__link" %>
+        </li>
+        <li>
+          <%= link_to 'プロフィール作成', "/profiles/new", class: "nav-link header__link" %>
+        </li>
+      </ul>
+    <% else %>
+      <ul class="nav nav-tabs">
+        <li>
+          <%= link_to 'トップページ', root_path, class: "nav-link header__link" %>
+        </li>
+        <li>
+          <%= link_to '掲示板', boards_path, class: "nav-link header__link" %>
+        </li>
+      </ul>
+     <% end %>
+  </div>
+</header>

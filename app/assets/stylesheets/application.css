@@ -1,0 +1,121 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ .all__main {
+  background-image: url(https://ferret.akamaized.net/images/59e76165fafbd876ce00035c/original.jpg?1508335973);
+  height: 100vh;
+  width: 100vw;
+}
+
+.field, .actions {
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: 20px; */
+}
+
+
+ .user-form {
+   display: flex;
+   justify-content: center;
+   margin-right: 40vw;
+ }
+
+ .container {
+   display: flex;
+   justify-content: space-between;
+   /* margin-top: 2vh; */
+ }
+ header {
+  background-image: url(https://ferret.akamaized.net/images/59e76165fafbd876ce00035c/original.jpg?1508335973);
+ }
+
+.registration-main {
+  /* background-image: url(https://www.beiz.jp/images_P/watercolor/watercolor_00006.jpg); */
+  background-size: cover;
+}
+
+.regitation-border {
+  border: solid 2px black;
+  margin: 0px 200px 100px;
+  background-color: lightgoldenrodyellow;
+  padding-top: 30px;
+  border-radius: 10px;
+}
+
+.session-main {
+  /* background-image: url(https://www.beiz.jp/images_T/cloth/cloth_00015.jpg); */
+  background-size: cover;
+}
+
+.session-border {
+  border: solid 2px black;
+  margin: 0px 200px;
+  background-color: lightgoldenrodyellow;
+  padding-top: 30px;
+  border-radius: 10px;
+}
+
+/* ヘッダー */
+.header__link {
+   color: black;
+}
+
+header {
+  /* background-color: rgba(255,147,30,0.5); */
+  /* padding-top: 3vh; */
+}
+
+.top-logo {
+  font-size: 60px;
+  text-decoration: none;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: orange;
+  -webkit-text-fill-color: white;
+  text-shadow: 5px 3px 0 orange;
+  margin: auto;
+  margin-top: 10px;
+}
+.top-logo span {
+  color: red;
+}
+
+.header__name {
+display: flex;
+justify-content: flex-end;
+margin-right: 20px;
+}
+
+.header__name span {
+  font-size: 20px;
+  color: rgb(200, 95, 95);
+}
+
+.login__user {
+  margin-right: 30px;
+  float: right;
+}
+/* ヘッダー */
+
+/* 画像プレビューサイズ */
+.img {
+  max-width: 30vh; 
+  height: auto;
+}
+/* 画像プレビューサイズ */
+
+
+
+
+

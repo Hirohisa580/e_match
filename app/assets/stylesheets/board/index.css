@@ -1,0 +1,80 @@
+.board__title {
+  /* background-color: orange; */
+  height: 40px;
+  font-weight: bold;
+  padding-left: 30px;
+  font-size: 30px;
+}
+
+.board__new {
+  /* background-color: lightblue; */
+  display: flex;
+  justify-content: flex-end; 
+  padding-right: 40px;
+  padding-top: 12px;
+}
+
+.board__main {
+  /* background-color: lightblue; */
+  height: 100%;
+  margin-left: 20px;
+}
+
+.box3 {
+  /* background-color: palegoldenrod; */
+  height: 100vh;
+}
+.box4 {
+  /* background-color: tan; */
+  height: 80vh;
+}
+
+.topics {
+  list-style-type: square;
+  color: black;
+  font-size: 3.0vh;
+}
+/* div[data-check="true"] {
+  background: #585555;
+} */
+.exp__click {
+  font-size: 0.7vh;
+  color: gray;
+}
+
+.badge {
+  cursor : pointer;
+}
+
+.board {
+  margin-bottom: 15px;
+}
+
+.exp__box {
+  background-color: lightyellow;
+  margin-right: 60px;
+  height: 70vh;
+  overflow: scroll;
+  border: solid 2px black;
+  border-radius: 10px;
+}
+
+#topic__title {
+  margin-left: 20px;
+}
+
+#exp__main {
+  margin: 20px;
+}
+
+.remarks {
+  font-size: 0.7vh;
+  color: gray;
+}
+
+.topic__edit {
+  color: white;
+}
+.topic__edit:hover {
+  color: white;
+}

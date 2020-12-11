@@ -1,0 +1,52 @@
+
+<div class="top-page">
+  <%=render "shared/header"%>
+</div>
+<div class="all__main">
+     <div class="top__header">
+        <% unless user_signed_in?%>
+          <ul class="user__log">
+            <li>
+              <%= link_to '新規作成', new_user_registration_path, class: "top__new top__btn" %>
+            </li>
+            <li>
+              <%= link_to 'ログイン', new_user_session_path, class: "top__login top__btn" %>
+            </li>
+          </ul>
+        <% else %>
+          <ul class="user__log">
+            <li>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "top__logout top__btn" %>
+            </li>
+          </ul>
+        <% end %>
+    </div>
+    <div class='item-contents'>
+      <h2 class='title'>プロフィール一覧</h2>
+        <ul class='item-lists'>
+          <% @profile_all.each do |profile| %>
+            <li class='list'>
+              <%= link_to profile_path(profile.id)  do %>
+                <div class='item-img-content'>
+                  <%= image_tag profile.image, class: "item-img img-thumbnail" %>
+                </div>
+              <% end %>
+                <div class='item__info'>
+                  <h3 class='item__name'>
+                    <li>芸名: <%= link_to "#{profile.nickname}", profile_path(profile.id), class: "profile__nickname"%></li>
+                    <li>ジャンル: <%= link_to "#{profile.genre_one.name}", "#", class: "profile__genre"%></li>
+                    <li>地域: <%= link_to "#{profile.area.name}", "#", class: "profile__area"%></li>
+                  </h3>
+                </div>
+            </li>
+          <% end %>
+        </ul>
+        <% if @profile_all.empty?%>
+          <%= image_tag 'kapibara1.png' %>
+        <% end %>
+    </div>
+</div>
+
+
+
+ 

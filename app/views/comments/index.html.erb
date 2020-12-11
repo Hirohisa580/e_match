@@ -1,0 +1,42 @@
+  <div class="top-page">
+    <%=render "shared/header"%>
+  </div>
+
+
+  <div class="all__main">
+        <div class="row">
+
+            <div class="box5 col-7">
+                <div class="comment__main">
+                    <% @comment_where.zip do |comment| %>
+                      <div class="comment__comment">
+                        <p class="comment__time">投稿日時<%= comment.created_at %><%="投稿者: #{comment.profile.nickname}" %></p>
+                        <%= comment.comment %>
+                        <div class="edit__flex">
+                          <% if comment.user_id == current_user.id%>
+                            <p><%= link_to '削除する', "/boards/#{@board.id}/comments/#{comment.id}", method: :delete, class: "comment__edit" %></p>
+                          <% else %>
+                            <p></p>
+                          <% end %>
+                        </div>
+                      </div>
+                    <% end %>
+                </div>
+            </div>
+            <div class="box6 col-5">
+                <div class="side__main">
+                    <div class="side__explanation">
+                        <P class="comment__name"><%="タイトル: #{@board.name}" %></p>
+                        <p class="comment__exp"><%=@board.explanation%></p>
+                    </div>
+                    <div class="side__form">
+                      <%= form_with model:[@board, @comment], url: board_comments_path, method: :post, local: true do |f| %>
+                        <%= f.text_area :comment, class: "comment__form" %>
+                        <input name="profile_id" type="hidden" value=<%= @profile.id %>>
+                        <p><%= f.submit "投稿", class: "comment__submit btn btn-success"%></p>
+                      <% end %>
+                    </div>
+                </div>
+            </div>          
+        </div>
+  </div>
