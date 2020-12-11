@@ -44,7 +44,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to dm_messages_path(params[:dm_id])
     else
-      render :index
+      redirect_to dm_messages_path
     end
   end
     
