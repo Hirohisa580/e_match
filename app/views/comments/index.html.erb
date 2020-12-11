@@ -10,7 +10,7 @@
                 <div class="comment__main">
                     <% @comment_where.zip do |comment| %>
                       <div class="comment__comment">
-                        <p class="comment__time">投稿日時<%= comment.created_at %><%="投稿者: #{comment.profile.nickname}" %></p>
+                        <p class="comment__time">投稿日時<%= comment.created_at %>  投稿者: <%= link_to "#{comment.profile.nickname}", profile_path(comment.profile.id) %></p>
                         <%= comment.comment %>
                         <div class="edit__flex">
                           <% if comment.user_id == current_user.id%>
