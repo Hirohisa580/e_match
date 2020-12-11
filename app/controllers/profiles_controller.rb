@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
-  before_action :header_variable, only: [:index, :new, :show, :edit]
+  before_action :header_variable, only: [:index, :new, :show, :edit, :update]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -39,8 +39,12 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile.update(profile_params)
-    redirect_to profile_path
+    if  @profile.update(profile_params)
+     redirect_to profile_path
+    else
+      render :edit
+    end
+
   end
 
   def destroy
