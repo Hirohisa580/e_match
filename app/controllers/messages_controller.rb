@@ -58,6 +58,7 @@ class MessagesController < ApplicationController
   end
 
   def set_message
-    params.require(:message).permit(:message).merge(user_id: current_user.id, dm_id: params[:dm_id])
+    @profile = Profile.find_by(user_id: current_user.id)
+    params.require(:message).permit(:message).merge(user_id: current_user.id, dm_id: params[:dm_id], profile_id: @profile.id)
   end
 end

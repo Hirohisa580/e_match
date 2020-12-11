@@ -27,10 +27,12 @@
         <div class="message__main">
           <% if @b_other == nil%>
           <% else %>
-              <% @r.zip(@b) do |r, b| %>
+              <% @r.each do |r| %>
                 <p class="all__message"><%= r.message%></p>
                   <%# <p class="all__nickname"><%= b.nickname%></p>  
                 <p class="all__created_at"><%= "投稿日時 #{r.created_at}" %></p>
+                <p class="all__contributor"><%= "投稿者: #{r.profile.nickname}" %></p>
+
               <% end %>
           <% end %>
         </div>
