@@ -22,6 +22,7 @@
                     <span class="badge badge-secondary" id= "topic__title"><%= link_to '編集', edit_board_path(board), class: "topic__edit" %></span>
                     <span class="badge badge-secondary" id= "topic__title"><%= link_to '削除', board_path(board), method: :delete, class: "topic__edit" %></span>
                   <% end %>
+                  <p class="board__category">ジャンル: <%= link_to "#{board.genre_one.name}", '#', class: "board__category" %></p>
                 </li>
               </div>
             <% end %>

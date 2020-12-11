@@ -78,3 +78,8 @@
 .topic__edit:hover {
   color: white;
 }
+
+.board__category {
+  color: black;
+  font-size: 18px;
+}
