@@ -1,3 +1,5 @@
+データが破損したため、githubからダウンロードして作り直した。2020/12/11
+
         <%= form_with model:@dm, url: dms_path, method: :post, local: true do |f|%>
           <select name="dm[user_ids][]">
             <option value="">DMするユーザーを選択してください</option>
