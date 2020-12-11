@@ -26,7 +26,8 @@
             <div class="box6 col-5">
                 <div class="side__main">
                     <div class="side__explanation">
-                        <P class="comment__name"><%="タイトル: #{@board.name}" %></p>
+                        <P class="comment__name">タイトル: <%= "#{@board.name}" %></p>
+                        <P class="comment__genre">ジャンル:<%= link_to "#{@board.genre_one.name}", '#', class: "comment__genre"%></p>
                         <p class="comment__exp"><%=@board.explanation%></p>
                     </div>
                     <div class="side__form">

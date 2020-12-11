@@ -66,6 +66,10 @@
 .comment__name {
   margin: 15px 15px 0px 15px;
 }
+.comment__genre {
+  margin: 1px 15px 0px 15px;
+  color: black;
+}
 
 .edit__flex {
   display: flex;
