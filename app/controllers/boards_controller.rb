@@ -24,7 +24,9 @@ class BoardsController < ApplicationController
   end
 
   def edit
-
+    if @board.user_id != current_user.id
+      redirect_to boards_path
+    end
   end
 
   def update
