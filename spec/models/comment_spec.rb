@@ -1,5 +1,42 @@
 require 'rails_helper'
 
-RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+  RSpec.describe Comment, type: :model do
+    before do
+      @comment = FactoryBot.build(:comment)
+    end
+
+    describe '掲示板コメント機能' do
+      context 'コメントできる時' do
+        it 'commentが入力されていて、紐づくuserとprofileとboardがあればコメントできる' do
+          expect(@comment).to be_valid
+        end
+      end
+
+      context 'コメントできない時' do
+        it 'commentが空だとコメントできない' do
+          @comment.comment = nil
+          @comment.valid?
+          expect(@comment.errors.full_messages).to include("Comment can't be blank")
+        end
+
+
+        it '紐づくuserが存在しないとコメントできない' do
+          @comment.user = nil
+          @comment.valid?
+          expect(@comment.errors.full_messages).to include("User must exist")
+        end
+
+        it '紐づくprofileが存在しないとコメントできない' do
+          @comment.profile = nil
+          @comment.valid?
+          expect(@comment.errors.full_messages).to include("Profile must exist")
+        end
+      
+        it '紐づくprofileが存在しないとコメントできない' do
+          @comment.board = nil
+          @comment.valid?
+          expect(@comment.errors.full_messages).to include("Board must exist")
+        end
+      end
+    end
+  end
