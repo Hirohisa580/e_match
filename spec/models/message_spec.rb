@@ -16,26 +16,26 @@ require 'rails_helper'
         it 'messageが空だとメッセージできない' do
           @message.message = nil
           @message.valid?
-          expect(@message.errors.full_messages).to include("Message can't be blank")
+          expect(@message.errors.full_messages).to include("Messageを入力してください")
         end
 
 
         it '紐づくuserが存在しないとメッセージできない' do
           @message.user = nil
           @message.valid?
-          expect(@message.errors.full_messages).to include("User must exist")
+          expect(@message.errors.full_messages).to include("Userを入力してください")
         end
 
         it '紐づくprofileが存在しないとメッセージできない' do
           @message.profile = nil
           @message.valid?
-          expect(@message.errors.full_messages).to include("Profile must exist")
+          expect(@message.errors.full_messages).to include("Profileを入力してください")
         end
       
         it '紐づくdmが存在しないとメッセージできない' do
           @message.dm = nil
           @message.valid?
-          expect(@message.errors.full_messages).to include("Dm must exist")
+          expect(@message.errors.full_messages).to include("Dmを入力してください")
         end
       end
     end
