@@ -148,26 +148,27 @@ require 'rails_helper'
           expect(@user.errors.full_messages).to include("Password confirmationとPasswordの入力が一致しません")
         end
   
-        # it "passwordが半角数字のみの場合は登録できない" do
-        #   @user.password = "123456"
-        #   @user.password_confirmation = "123456"
-        #   @user.valid?
-        #   expect(@user.errors.full_messages).to include("Passwordは不正な値です")
-        # end
+        it "passwordが半角数字のみの場合は登録できない" do
+          @user.password = "123456"
+          @user.password_confirmation = "123456"
+          @user.valid?
+          binding.pry
+          expect(@user.errors.full_messages).to include("Passwordは不正な値です")
+        end
   
-        # it "passwordが半角英字のみの場合は登録できない" do
-        #   @user.password = "abcdef"
-        #   @user.password_confirmation = "abcdef"
-        #   @user.valid?
-        #   expect(@user.errors.full_messages).to include("Passwordは不正な値です")
-        # end
+        it "passwordが半角英字のみの場合は登録できない" do
+          @user.password = "abcdef"
+          @user.password_confirmation = "abcdef"
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Passwordは不正な値です")
+        end
   
-        # it "passwordが全角の場合は登録できない" do
-        #   @user.password = "Ａ１２３４"
-        #   @user.password_confirmation = "Ａ１２３４"
-        #   @user.valid?
-        #   expect(@user.errors.full_messages).to include("Passwordは不正な値です")
-        # end
+        it "passwordが全角の場合は登録できない" do
+          @user.password = "Ａ１２３４"
+          @user.password_confirmation = "Ａ１２３４"
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Passwordは不正な値です")
+        end
   
         it "passwordが半角英数字混合だが、5文字以下だと登録できない" do
           @user.password = "a1234"

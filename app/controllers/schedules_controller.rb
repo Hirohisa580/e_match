@@ -5,10 +5,10 @@ class SchedulesController < ApplicationController
   before_action :set_profile, only: [:new, :show, :edit]
   
   def index
-    @profile_id = params[:profile_id]
-    @my_schedule = Schedule.where(profile_id: @profile_id)
-    my_schedule = Schedule.find_by(profile_id: @profile_id)
-    if current_user.id != my_schedule.user_id
+    @profile = Profile.find(params[:profile_id])
+    @my_schedule = Schedule.where(profile_id: @profile.id)
+    current_profile = Profile.find_by(user_id: current_user.id)
+    if @profile.id != current_profile.id
       redirect_to root_path
     end
   end
