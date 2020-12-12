@@ -21,19 +21,19 @@ require 'rails_helper'
         it 'nicknameが空では登録できない' do
           @profile.nickname = nil
           @profile.valid?
-          expect(@profile.errors.full_messages).to include("Nickname can't be blank")
+          expect(@profile.errors.full_messages).to include("Nicknameを入力してください")
         end
 
         it 'pubilic_relationが空だと登録できない' do
           @profile.public_relation = nil
           @profile.valid?
-          expect(@profile.errors.full_messages).to include("Public relation can't be blank")
+          expect(@profile.errors.full_messages).to include("Public relationを入力してください")
         end
 
         it 'imageが空だと登録できない' do
           @profile.image = nil
           @profile.valid?
-          expect(@profile.errors.full_messages).to include("Image can't be blank")
+          expect(@profile.errors.full_messages).to include("Imageを入力してください")
         end
 
 
@@ -41,12 +41,12 @@ require 'rails_helper'
         it 'area_idが１だと登録できない' do
           @profile.area_id = 1
           @profile.valid?
-          expect(@profile.errors.full_messages).to include("Area must be other than 1")
+          expect(@profile.errors.full_messages).to include("Areaは1以外の値にしてください")
         end
         it 'genre_one_idが１だと登録できない' do
           @profile.genre_one_id = 1
           @profile.valid?
-          expect(@profile.errors.full_messages).to include("Genre one must be other than 1")
+          expect(@profile.errors.full_messages).to include("Genre oneは1以外の値にしてください")
         end
 
 
@@ -54,25 +54,25 @@ require 'rails_helper'
         it 'ageを記入する際に文字を記入すると登録できない' do
           @profile.age = "25歳"
           @profile.valid?
-          expect(@profile.errors.full_messages).to include("Age is invalid")
+          expect(@profile.errors.full_messages).to include("Ageは不正な値です")
         end
 
         it 'ageを記入する際に全角で記入すると登録できない' do
           @profile.age = "２５"
           @profile.valid?
-          expect(@profile.errors.full_messages).to include("Age is invalid")
+          expect(@profile.errors.full_messages).to include("Ageは不正な値です")
         end
 
         it 'historyを記入する際に文字を記入すると登録できない' do
           @profile.history = "40年"
           @profile.valid?
-          expect(@profile.errors.full_messages).to include("History is invalid")
+          expect(@profile.errors.full_messages).to include("Historyは不正な値です")
         end
 
         it 'historyを記入する際に全角で記入すると登録できない' do
           @profile.history = "４０"
           @profile.valid?
-          expect(@profile.errors.full_messages).to include("History is invalid")
+          expect(@profile.errors.full_messages).to include("Historyは不正な値です")
         end
 
 
@@ -80,8 +80,7 @@ require 'rails_helper'
         it '紐付くユーザーが存在しないと登録できない' do
           @profile.user = nil
           @profile.valid?
-          binding.pry
-          expect(@profile.errors.full_messages).to include("User must exist")
+          expect(@profile.errors.full_messages).to include("Userを入力してください")
         end
         
       end
