@@ -12,9 +12,9 @@
             <%= f.datetime_select :start_time %>
           </div>
           <div class="schedule__form_main">
-            <span>予定</span>
+            <span>予定（必須）</span>
             <p><%= f.text_field :title, class: "schedule__title" %></p>
-            <span>詳細</span>
+            <span>詳細（任意）</span>
             <p><%= f.text_area :plan, class: "schedule__plan" %></p>
             <p><%= f.submit '登録', class: "btn btn-success" %></p>
           </div>
