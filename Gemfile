@@ -70,3 +70,6 @@ gem 'fog-aws'
 gem 'rename'
 gem "simple_calendar", "~> 2.0"
 gem 'rails-i18n'
+group :production do
+  gem 'unicorn', '5.4.1'
+end
