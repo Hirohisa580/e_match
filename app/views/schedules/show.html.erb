@@ -2,3 +2,20 @@
   <div class="top-page">
     <%=render "shared/header" %>
   </div>
+
+    <div class="all__main">
+        <div>
+            <%= link_to "スケジュールにもどる", profile_schedules_path(@profile.id), class: "schedule__back" %>
+            <p class="time__show"><%= "<日付と時間> #{@schedule.start_time} " %></p>
+            <div class="schedule__show">
+              <span>予定</span>
+              <p class="title__show"><%= @schedule.title %></p>
+              <span>詳細</span>
+              <p class="plan__show"><%= @schedule.plan %></p>
+              <%= link_to "編集する", edit_profile_schedule_path(@profile.id), class: "btn btn-success" %>
+            </div>
+            <div class="schedule__delete">
+              <%= link_to "削除する", profile_schedule_path(@profile.id), method: :delete, class: "btn btn-outline-secondary" %>
+            </div>
+        </div>
+    </div>

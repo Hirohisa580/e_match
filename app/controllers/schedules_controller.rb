@@ -1,25 +1,40 @@
 class SchedulesController < ApplicationController
-  before_action :header_variable, only: [:index, :new, :show]
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :header_variable, only: [:index, :new, :show, :edit]
+  before_action :set_schedule, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:new, :show, :edit]
   
   def index
     @profile_id = params[:profile_id]
-    @schedule_all = Schedule.all
+    @my_schedule = Schedule.where(profile_id: @profile_id)
   end
 
   def new
     @schedule = Schedule.new
-    @profile = Profile.find(params[:profile_id])
   end
 
   def create
-    binding.pry
-    @schedule = Schedule.new(params_schedule)
+    @schedule = Schedule.new(schedule_params)
     @schedule.save
     redirect_to "/profiles/#{params[:profile_id]}/schedules"
   end
 
   def show
-    @schedule = Schedule.find(params[:id])
+
+  end
+
+  def edit
+
+  end
+
+  def update
+    @schedule.update(schedule_params)
+    redirect_to profile_schedules_path
+  end
+
+  def destroy
+    @schedule.destroy
+    redirect_to profile_schedules_path
   end
 
 
@@ -31,8 +46,16 @@ class SchedulesController < ApplicationController
     @current_profile = Profile.find_by(user_id: current_user.id)
   end
 
-  def params_schedule
+  def schedule_params
     params.require(:schedule).permit(:title, :plan, :start_time).merge(user_id: current_user.id, profile_id: params[:profile_id])
+  end
+
+  def set_schedule
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def set_profile
+    @profile = Profile.find(params[:profile_id])
   end
 
 end

@@ -8,11 +8,11 @@
 
     <div class="schedule__main_back">
       <div class="schedule__main">
-        <%= month_calendar events: @schedule_all do |date, schedule_all|%>
-          <%= date %>
+        <%= month_calendar events: @my_schedule do |date, my_schedule|%>
+          <%= date.day %>
 
-          <% schedule_all.each do |schedule| %>
-            <div>
+          <% my_schedule.each do |schedule| %>
+            <div class="schdule__contents">
               <%=link_to "#{schedule.title}", "/profiles/#{@profile_id}/schedules/#{schedule.id}" %>
             </div>
           <% end %>
