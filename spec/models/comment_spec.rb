@@ -16,26 +16,26 @@ require 'rails_helper'
         it 'commentが空だとコメントできない' do
           @comment.comment = nil
           @comment.valid?
-          expect(@comment.errors.full_messages).to include("Comment can't be blank")
+          expect(@comment.errors.full_messages).to include("Commentを入力してください")
         end
 
 
         it '紐づくuserが存在しないとコメントできない' do
           @comment.user = nil
           @comment.valid?
-          expect(@comment.errors.full_messages).to include("User must exist")
+          expect(@comment.errors.full_messages).to include("Userを入力してください")
         end
 
         it '紐づくprofileが存在しないとコメントできない' do
           @comment.profile = nil
           @comment.valid?
-          expect(@comment.errors.full_messages).to include("Profile must exist")
+          expect(@comment.errors.full_messages).to include("Profileを入力してください")
         end
       
         it '紐づくprofileが存在しないとコメントできない' do
           @comment.board = nil
           @comment.valid?
-          expect(@comment.errors.full_messages).to include("Board must exist")
+          expect(@comment.errors.full_messages).to include("Boardを入力してください")
         end
       end
     end
