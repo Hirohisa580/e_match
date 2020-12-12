@@ -16,13 +16,13 @@ require 'rails_helper'
         it 'nameが存在しないと作成できない' do
           @board.name = nil
           @board.valid?
-          expect(@board.errors.full_messages).to include("Name can't be blank")
+          expect(@board.errors.full_messages).to include("Nameを入力してください")
         end
 
         it 'explanationが存在しないと作成できない' do
           @board.explanation = nil
           @board.valid?
-          expect(@board.errors.full_messages).to include("Explanation can't be blank")
+          expect(@board.errors.full_messages).to include("Explanationを入力してください")
         end
 
 
@@ -30,20 +30,20 @@ require 'rails_helper'
         it 'nameが存在しないと作成できない' do
           @board.genre_one_id = 1
           @board.valid?
-          expect(@board.errors.full_messages).to include("Genre one must be other than 1")
+          expect(@board.errors.full_messages).to include("Genre oneは1以外の値にしてください")
         end
 
 
         it '紐づくuserが存在しないと作成できない' do
           @board.user = nil
           @board.valid?
-          expect(@board.errors.full_messages).to include("User must exist")
+          expect(@board.errors.full_messages).to include("Userを入力してください")
         end
 
         it '紐づくprofileが存在しないと作成できない' do
           @board.profile = nil
           @board.valid?
-          expect(@board.errors.full_messages).to include("Profile must exist")
+          expect(@board.errors.full_messages).to include("Profileを入力してください")
         end
 
       end
