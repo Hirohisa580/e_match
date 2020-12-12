@@ -68,3 +68,4 @@ gem 'payjp'
 gem "aws-sdk-s3", require: false
 gem 'fog-aws'
 gem 'rename'
+gem "simple_calendar", "~> 2.0"

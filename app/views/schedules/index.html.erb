@@ -1,0 +1,24 @@
+
+  <div class="top-page">
+    <%=render "shared/header"%>
+  </div>
+
+  <div class="all__main">
+      <P><%= link_to "スケジュールを登録する", "/profiles/#{@profile_id}/schedules/new", class: "schedule__new"%></p>
+
+    <div class="schedule__main_back">
+      <div class="schedule__main">
+        <%= month_calendar events: @schedule_all do |date, schedule_all|%>
+          <%= date %>
+
+          <% schedule_all.each do |schedule| %>
+            <div>
+              <%=link_to "#{schedule.title}", "/profiles/#{@profile_id}/schedules/#{schedule.id}" %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+

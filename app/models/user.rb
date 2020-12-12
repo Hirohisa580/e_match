@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :dms, through: :user_dms
   has_many :boards
   has_many :comments
+  has_many :scedules
 
   with_options presence: true do
     validates :first_name

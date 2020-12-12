@@ -4,6 +4,7 @@ class Profile < ApplicationRecord
   has_one_attached :image
   has_many :boards, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :schedule, dependent: :destroy
 
 
 
