@@ -2,6 +2,13 @@
    <%=render "shared/header"%>
 </div>
   <div class="all__main">
+    <div class="schedule">
+      <% if @profile.id == @my_profile.id %>
+        <%= link_to "スケジュール管理", profile_schedules_path(@profile.id), class: "profile__schedule"%>
+      <% else %>
+        <p></p>
+      <% end %>
+    </div>
     <div class="profile__wrapper">
       <p class="profile__hedding">
         <%= "#{@profile.nickname}"%>

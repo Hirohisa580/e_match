@@ -79,3 +79,9 @@
   height: 2.5vh
 }
 
+.schedule {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 40px; 
+  padding-top: 10px;
+}

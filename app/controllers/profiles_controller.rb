@@ -21,7 +21,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(params[:id])
+    @my_profile = Profile.find_by(user_id: current_user.id)
     profile_user_id = @profile.user_id                        #選んだユーザーのユーザーidを取得
     profile_user_dm = UserDm.where(user_id: profile_user_id)  #user_dmsテーブルに登録されている選んだユーザーの情報を取得
     profile_dm_ids = profile_user_dm.pluck(:dm_id)           #選んだユーザーが持ってるdm_idを配列で取得

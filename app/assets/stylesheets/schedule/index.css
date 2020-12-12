@@ -1,0 +1,26 @@
+
+
+.schedule__new {
+  display: block;
+  padding-top: 10px;
+  padding-left: 15px;
+  width: 22vw;
+}
+
+.schedule__main {
+  width: 70vw;
+  height: 83vh;
+  margin-left: 16vw;
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 0 20px;
+  overflow: scroll;
+}
+
+.schdule__contents {
+  border: solid 1px black;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  font-size: 1.8vh;
+}

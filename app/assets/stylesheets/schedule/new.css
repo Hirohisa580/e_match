@@ -1,0 +1,74 @@
+
+
+
+.schedule__time {
+  /* background-color: orange; */
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.schedule__back {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  width: 20vw;
+}
+
+/* .schedule__form_main {
+  background-color: lightyellow;
+  width: 300px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-left: 50px;
+  border: solid 1px black;
+  border-radius: 10px;
+  margin: auto;
+} */
+
+.schedule__form_main {
+  background-color: lightyellow;
+  width: 60%;
+  height: 70vh;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-left: 50px;
+  border: solid 1px black;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.schedule__form {
+
+}
+
+.schedule__title {
+  /* background-color: orange; */
+  background-color: white;
+  width: 30vw;
+  margin-right: 50px;
+  height: 30px;
+  border: solid black 1px;
+  padding-left: 5px;
+  padding-top: 2px;
+  border-radius: 2px;
+}
+.schedule__plan {
+  /* background-color: orange; */
+  background-color: white;
+  width: 90%;
+  margin-right: 50px;
+  height: 40vh;
+  border: solid black 1px;
+  padding-left: 5px;
+  padding-top: 5px;
+  border-radius: 2px;
+  overflow: scroll;
+}
+
+.schedule__submit {
+  /* background-color: orange; */
+  /* margin-top: 10px; */
+
+}
+

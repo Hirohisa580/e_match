@@ -1,0 +1,22 @@
+  <div class="top-page">  
+    <%=render "shared/edit_header" %>
+  </div>
+
+  <div class="all__main">
+      <div>
+        <%= form_with model: @schedule, url: profile_schedule_path, method: :patch, class: "schedule__form", local: true do |f| %>
+          <%= link_to "スケジュールにもどる", profile_schedules_path(@profile.id), class: "schedule__back" %>
+          <div class="schedule__time"%>
+            <%= "<日付と時間>"  %>
+            <%= f.datetime_select :start_time %>
+          </div>
+          <div class="schedule__form_main">
+            <span>予定</span>
+            <p><%= f.text_field :title, class: "schedule__title" %></p>
+            <span>詳細</span>
+            <p><%= f.text_area :plan, class: "schedule__plan" %></p>
+            <p><%= f.submit '再登録', class: "btn btn-success" %></p>
+          </div>
+        <% end %>
+      </div>
+  </div>
