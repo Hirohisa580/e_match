@@ -7,6 +7,10 @@ class SchedulesController < ApplicationController
   def index
     @profile_id = params[:profile_id]
     @my_schedule = Schedule.where(profile_id: @profile_id)
+    my_schedule = Schedule.find_by(profile_id: @profile_id)
+    if current_user.id != my_schedule.user_id
+      redirect_to root_path
+    end
   end
 
   def new
@@ -15,8 +19,13 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(schedule_params)
-    @schedule.save
-    redirect_to "/profiles/#{params[:profile_id]}/schedules"
+    if @schedule.save
+      redirect_to "/profiles/#{params[:profile_id]}/schedules"
+    else
+      set_profile
+      header_variable
+      render :new
+    end
   end
 
   def show
@@ -28,8 +37,13 @@ class SchedulesController < ApplicationController
   end
 
   def update
-    @schedule.update(schedule_params)
-    redirect_to profile_schedules_path
+    if @schedule.update(schedule_params)
+      redirect_to profile_schedules_path
+    else
+      set_profile
+      header_variable
+      render :edit
+    end
   end
 
   def destroy

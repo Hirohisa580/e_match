@@ -13,7 +13,7 @@
 
           <% my_schedule.each do |schedule| %>
             <div class="schdule__contents">
-              <%=link_to "#{schedule.title}", "/profiles/#{@profile_id}/schedules/#{schedule.id}" %>
+              <%=link_to "#{schedule.title}", "/profiles/#{@profile_id}/schedules/#{schedule.id}", class: "schedule__contens_font" %>
             </div>
           <% end %>
         <% end %>
