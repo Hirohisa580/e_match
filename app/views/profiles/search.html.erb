@@ -22,7 +22,6 @@
         <%= form_with url: search_profiles_path, local: true, method: :get, class: "profile__search" do |f| %>
           <p class="profile__search_title">ジャンルで検索<br /><p>
           <%= f.collection_select(:genre_one_id, GenreOne.all, :id, :name, {}, class: "profile__search_form") %>
-          <%#= f.text_field :keyword, placeholder: "キーワード検索", class: "profile__search_form" %>
           <%= f.submit "検索", class: "profile__search_submit" %>
         <% end %>
     </div>
