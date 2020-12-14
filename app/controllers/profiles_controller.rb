@@ -10,8 +10,10 @@ class ProfilesController < ApplicationController
   def search
     genre_id = params[:genre_one_id]
     @profile_search = Profile.where(genre_one_id: genre_id)
-    binding.pry 
-    @profile_all = Profile.all
+    profile_search = Profile.find_by(genre_one_id: genre_id)
+    if profile_search != nil
+      @genre = profile_search.genre_one.name
+    end
   end
 
   def new
