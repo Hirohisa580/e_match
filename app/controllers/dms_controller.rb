@@ -5,6 +5,7 @@ class DmsController < ApplicationController
   end
 
   def create
+    binding.pry
     dm = Dm.new(dm_params)
     dm.save
     profile_user_id = dm.user_ids[0]                         #選んだユーザーのユーザーidを取得
