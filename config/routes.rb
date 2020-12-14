@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: "profiles#index"
 
   resources :profiles do
+    collection do
+      get 'search'
+    end
     resources :schedules
   end
 

@@ -1,9 +1,16 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
-  before_action :header_variable, only: [:index, :new, :show, :edit, :update]
+  before_action :header_variable, only: [:index, :new, :show, :edit, :update, :search]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def index
+    @profile_all = Profile.all
+  end
+
+  def search
+    genre_id = params[:genre_one_id]
+    @profile_search = Profile.where(genre_one_id: genre_id)
+    binding.pry 
     @profile_all = Profile.all
   end
 

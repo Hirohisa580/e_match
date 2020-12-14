@@ -6,8 +6,6 @@ class Profile < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :schedule, dependent: :destroy
 
-
-
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :area
   belongs_to :genre_one
