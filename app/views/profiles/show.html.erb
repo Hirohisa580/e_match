@@ -21,8 +21,8 @@
           <%= link_to "DMルーム", dm_messages_path(@intersection), class: :profile__btn %> 
         <% else %>
             <%= form_with model: @dm, local: true do |f|%>
-              <input name="dm[user_ids][]" type="hidden" value=<%= @profile.user_id %>>
-              <input name="dm[user_ids][]" type="hidden" value=<%= current_user.id %>>
+              <input name="user_id" type="hidden" value=<%= @profile.user_id %>>
+              <%# <input name="dm[user_ids][]" type="hidden" value=<%= current_user.id %>
               <%= f.submit "DMルーム（作成前）", class: :profile__btn %>
             <% end %>
         <% end %>

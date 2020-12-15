@@ -4,7 +4,7 @@ class BoardsController < ApplicationController
   before_action :set_board, only: [:edit, :update, :destroy]
 
   def index
-    @board_all = Board.all
+    @board_all = Board.order("id DESC")
     @profile_all = Profile.all
   end
 

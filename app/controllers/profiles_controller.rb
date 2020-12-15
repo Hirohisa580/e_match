@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def index
-    @profile_all = Profile.all
+    @profile_all = Profile.order("RAND()").all
   end
 
   def search
