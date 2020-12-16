@@ -20,6 +20,7 @@
   border: solid 1px black;
 }
 
-#board__submit {
+.board__submit {
   margin-left: 300px;
+  margin-top: 20px;
 }
