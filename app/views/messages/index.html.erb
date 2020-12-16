@@ -42,6 +42,7 @@
           <div class="message__footer">
             <%= form_with model: [@dm,@message], url: dm_messages_path, method: :post, local: true do |f| %>
               <div class="message__form">  
+                <label for="message_message"></label>
                 <%= f.text_area :message, class: "message__input" %>
                 <%= f.submit "送信", class: "btn btn-success" %>
               </div>
