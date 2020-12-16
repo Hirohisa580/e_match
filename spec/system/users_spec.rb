@@ -22,7 +22,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
         find('input[name="commit"]').click
       }.to change { User.count }.by(1)
       expect(current_path).to eq root_path
-
+      
       expect(page).to have_content('ログアウト')
       expect(page).to have_content('ログイン中')
       expect(page).to have_no_content('新規登録')

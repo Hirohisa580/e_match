@@ -1,6 +1,6 @@
 .top__main {
-  background-color: ghostwhite;
-  
+  /* background-color: ghostwhite; */
+  height: 100vh;
 }
 
 .profile__search {
@@ -90,7 +90,7 @@
 }
 
 .item-lists>.list {
-  width: 37vh;
+  /* width: 37vh; */
   padding: 1vw;
   /* background-color: #FFF; */
 }
