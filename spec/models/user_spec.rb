@@ -152,7 +152,6 @@ require 'rails_helper'
           @user.password = "123456"
           @user.password_confirmation = "123456"
           @user.valid?
-          binding.pry
           expect(@user.errors.full_messages).to include("Passwordは不正な値です")
         end
   
