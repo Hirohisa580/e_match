@@ -19,11 +19,11 @@
         <span class="favorite__all">
           <% if current_user.already_favorited?(@profile)%>
             <%= link_to profile_favorite_path(@profile), method: :delete, class: "favorite__btn" do %>
-              <i class="fas fa-heart"></i>
+              <i class="fas fa-heart heart__on"></i>
             <% end %>
           <% else %>
             <%= link_to profile_favorites_path(@profile), method: :post, class:"favorite__btn" do %>
-              <i class="far fa-heart"></i>
+              <i class="far fa-heart heart__off"></i>
             <% end %>
           <% end %>
           <span class="favorite__btn_count"><%= @profile.favorites.count %></span>
@@ -34,13 +34,19 @@
       <div class="profile__direct">
         <% if @my_profile!= nil %>
           <% if current_page?(@user_profile) && @user_profile != nil%>
-            <%= link_to "DMルーム（現ユーザー）", dm_messages_path(:dm_id), class: :profile__btn %>            
+            <%= link_to dm_messages_path(:dm_id) do %>
+              <i class="far fa-paper-plane dm__icon"></i>
+            <% end %>            
           <% elsif !@intersection.empty?%>
-            <%= link_to "DMルーム", dm_messages_path(@intersection), class: :profile__btn %> 
+            <%= link_to dm_messages_path(@intersection) do %>
+              <i class="far fa-envelope dm__icon"></i>
+            <% end %> 
           <% else %>
             <%= form_with model: @dm, local: true do |f|%>
-              <input name="user_id" type="hidden" value=<%= @profile.user_id %>>
-              <%= f.submit "DMルーム（作成前）", class: :profile__btn %>
+              <input name="user_id" type="hidden" value=<%= @profile.user_id %>>             
+              <button type="submit" class="butten1">
+                <i class="far fa-envelope "></i> 開設
+              </button>
             <% end %>
           <% end %>
         <% else %>

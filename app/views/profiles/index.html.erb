@@ -43,12 +43,12 @@
                     <li>地域: <%= link_to "#{profile.area.name}", "#", class: "profile__area"%></li>
                     <% if user_signed_in? %>
                       <% if current_user.already_favorited?(profile)%>
-                        <li class="favorite__btn_count"><i class="fas fa-heart"></i><span class="profile__favotie_count"><%= profile.favorites.count %></li></span>
+                        <li class="favorite__btn_count"><i class="fas fa-heart heart__on"></i><span class="profile__favotie_count"><%= profile.favorites.count %></li></span>
                       <% else %>
-                        <li class="favorite__btn_count"><i class="far fa-heart"></i><span class="profile__favotie_count"><%= profile.favorites.count %></li></span>
+                        <li class="favorite__btn_count"><i class="far fa-heart heart__off"></i><span class="profile__favotie_count"><%= profile.favorites.count %></li></span>
                       <% end %>
                     <% else %>
-                      <li class="favorite__btn_count"><i class="far fa-heart"></i><span class="profile__favotie_count"><%= profile.favorites.count %></li></span>
+                      <li class="favorite__btn_count"><i class="far fa-heart heart__off"></i><span class="profile__favotie_count"><%= profile.favorites.count %></li></span>
                     <% end %>
                   </h3>
                 </div>

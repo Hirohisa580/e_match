@@ -26,11 +26,16 @@
   font-size: 20px;
   font-weight: 400;
 }
-.fas {
+.heart__on {
   color: red;
 }
-.far {
+.heart__off {
   color: gray; 
+}
+
+.dm__icon {
+  color: black;
+  font-size: 250%;
 }
 
 .profile__user{
@@ -64,6 +69,10 @@
   padding-bottom: 40px;
 }
 
+.butten1 {
+  
+}
+
 .profile__btn{
   display: block;
   padding: 0.4em 1.6em;
@@ -76,10 +85,12 @@
   transition: 0.4s ease;
   margin: 0 4px;
 }
+
 .profile__btn:hover{
   color: #fff;
   background: #999;
 }
+
 .public__border {
   margin: 0px 300px 100px 300px;
   padding: 15px 20px 30px 20px;
