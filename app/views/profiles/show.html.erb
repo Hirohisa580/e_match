@@ -12,6 +12,19 @@
     <div class="profile__wrapper">
       <p class="profile__hedding">
         <%= "#{@profile.nickname}"%>
+        <span class="favorite__all">
+          <% if current_user.already_favorited?(@profile)%>
+            <%= link_to profile_favorite_path(@profile), method: :delete, class: "favorite__btn" do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= link_to profile_favorites_path(@profile), method: :post, class:"favorite__btn" do %>
+              <i class="far fa-heart"></i>
+            <% end %>
+          <% end %>
+          <span class="favorite__btn_count"><%= @profile.favorites.count %></span>
+        </span>
+
       </p>
 
       <div class="profile__direct">
@@ -20,11 +33,10 @@
         <% elsif !@intersection.empty?%>
           <%= link_to "DMルーム", dm_messages_path(@intersection), class: :profile__btn %> 
         <% else %>
-            <%= form_with model: @dm, local: true do |f|%>
-              <input name="user_id" type="hidden" value=<%= @profile.user_id %>>
-              <%# <input name="dm[user_ids][]" type="hidden" value=<%= current_user.id %>
-              <%= f.submit "DMルーム（作成前）", class: :profile__btn %>
-            <% end %>
+          <%= form_with model: @dm, local: true do |f|%>
+            <input name="user_id" type="hidden" value=<%= @profile.user_id %>>
+            <%= f.submit "DMルーム（作成前）", class: :profile__btn %>
+          <% end %>
         <% end %>
       </div>
 

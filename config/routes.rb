@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'search'
     end
     resources :schedules
+    resources :favorites, only: [:create, :destroy]
   end
 
   resources :dms, only: [:new, :create] do
