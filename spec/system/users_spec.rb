@@ -45,7 +45,6 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       expect{
         find('input[name="commit"]').click
       }.to change { User.count }.by(0)
-      binding.pry
       expect(current_path).to eq "/users"
     end
   end
