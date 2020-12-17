@@ -20,7 +20,7 @@
           <% if @b_other == nil %>
             <h1 class="header__title">⬅️ユーザーを選択してください<h1>
           <% else %>
-            <h1 class="header__title"><%= @b_other.nickname%></h1>
+            <h1 class="header__title"><%= link_to "#{@b_other.nickname}", profile_path(@b_other), class: "message__user_name" %></h1>
           <% end %>
         </div>
 

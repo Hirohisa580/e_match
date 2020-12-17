@@ -41,6 +41,15 @@
                     <li>芸名: <%= link_to "#{profile.nickname}", profile_path(profile.id), class: "profile__nickname"%></li>
                     <li>ジャンル: <%= link_to "#{profile.genre_one.name}", "#", class: "profile__genre"%></li>
                     <li>地域: <%= link_to "#{profile.area.name}", "#", class: "profile__area"%></li>
+                    <% if user_signed_in? %>
+                      <% if current_user.already_favorited?(profile)%>
+                        <li class="favorite__btn_count"><i class="fas fa-heart"></i><span class="profile__favotie_count"><%= profile.favorites.count %></li></span>
+                      <% else %>
+                        <li class="favorite__btn_count"><i class="far fa-heart"></i><span class="profile__favotie_count"><%= profile.favorites.count %></li></span>
+                      <% end %>
+                    <% else %>
+                      <li class="favorite__btn_count"><i class="far fa-heart"></i><span class="profile__favotie_count"><%= profile.favorites.count %></li></span>
+                    <% end %>
                   </h3>
                 </div>
             </li>

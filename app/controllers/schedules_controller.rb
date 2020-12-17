@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :authenticate_user!
   before_action :header_variable, only: [:index, :new, :show, :edit]
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
   before_action :set_profile, only: [:new, :show, :edit]

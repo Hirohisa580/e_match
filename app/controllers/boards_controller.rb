@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create, :edit]
+  before_action :authenticate_user!
   before_action :header_variable, only: [:index, :new, :edit]
   before_action :set_board, only: [:edit, :update, :destroy]
 

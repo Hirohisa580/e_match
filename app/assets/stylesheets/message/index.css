@@ -22,6 +22,11 @@
   font-weight: bold;
 }
 
+.message__user_name {
+  color: black;
+  text-decoration: none;
+}
+
 .user__choice {
   background-color: white;
   color: black;

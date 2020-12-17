@@ -3,8 +3,12 @@
 </div>
   <div class="all__main">
     <div class="schedule">
-      <% if @profile.id == @my_profile.id %>
-        <%= link_to "スケジュール管理", profile_schedules_path(@profile.id), class: "profile__schedule"%>
+      <% if @my_profile != nil%>
+        <% if @profile.id == @my_profile.id %>
+          <%= link_to "スケジュール管理", profile_schedules_path(@profile.id), class: "profile__schedule"%>
+        <% else %>
+          <p></p>
+        <% end %>
       <% else %>
         <p></p>
       <% end %>
@@ -28,15 +32,19 @@
       </p>
 
       <div class="profile__direct">
-        <% if current_page?(@user_profile) && @user_profile != nil%>
-          <%= link_to "DMルーム（現ユーザー）", dm_messages_path(:dm_id), class: :profile__btn %>            
-        <% elsif !@intersection.empty?%>
-          <%= link_to "DMルーム", dm_messages_path(@intersection), class: :profile__btn %> 
-        <% else %>
-          <%= form_with model: @dm, local: true do |f|%>
-            <input name="user_id" type="hidden" value=<%= @profile.user_id %>>
-            <%= f.submit "DMルーム（作成前）", class: :profile__btn %>
+        <% if @my_profile!= nil %>
+          <% if current_page?(@user_profile) && @user_profile != nil%>
+            <%= link_to "DMルーム（現ユーザー）", dm_messages_path(:dm_id), class: :profile__btn %>            
+          <% elsif !@intersection.empty?%>
+            <%= link_to "DMルーム", dm_messages_path(@intersection), class: :profile__btn %> 
+          <% else %>
+            <%= form_with model: @dm, local: true do |f|%>
+              <input name="user_id" type="hidden" value=<%= @profile.user_id %>>
+              <%= f.submit "DMルーム（作成前）", class: :profile__btn %>
+            <% end %>
           <% end %>
+        <% else %>
+          <p></p>
         <% end %>
       </div>
 

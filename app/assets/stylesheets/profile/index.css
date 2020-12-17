@@ -55,6 +55,10 @@
   height: auto;
 }
 
+.profile__favotie_count {
+  margin-left: 3px;
+}
+
 .area__main {
   margin-top: 200px;
 }
@@ -73,14 +77,6 @@
   line-height: 1.4;
   font-weight: bold;
 }
-
- /* .item-contents>.subtitle {
-  font-size: 3vh;
-  margin: 1vh 0;
-  text-decoration: none;
-  color: #3ccace;
-  font-weight: bold;
-}  */
 
 .item-lists {
   width: 100vw;
