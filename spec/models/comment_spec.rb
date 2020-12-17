@@ -32,7 +32,7 @@ require 'rails_helper'
           expect(@comment.errors.full_messages).to include("Profileを入力してください")
         end
       
-        it '紐づくprofileが存在しないとコメントできない' do
+        it '紐づくboardが存在しないとコメントできない' do
           @comment.board = nil
           @comment.valid?
           expect(@comment.errors.full_messages).to include("Boardを入力してください")

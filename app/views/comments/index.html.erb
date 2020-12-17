@@ -31,11 +31,15 @@
                         <p class="comment__exp"><%=@board.explanation%></p>
                     </div>
                     <div class="side__form">
-                      <%= form_with model:[@board, @comment], url: board_comments_path, method: :post, local: true do |f| %>
-                        <label for="comment_comment"></label>
-                        <%= f.text_area :comment, class: "comment__form" %>
-                        <input name="profile_id" type="hidden" value=<%= @profile.id %>>
-                        <p><%= f.submit "投稿", class: "comment__submit btn btn-success"%></p>
+                      <% if @profile != nil %>
+                        <%= form_with model:[@board, @comment], url: board_comments_path, method: :post, local: true do |f| %>
+                          <label for="comment_comment"></label>
+                          <%= f.text_area :comment, class: "comment__form" %>
+                          <input name="profile_id" type="hidden" value=<%= @profile.id %>>
+                          <p><%= f.submit "投稿", class: "comment__submit btn btn-success"%></p>
+                        <% end %>
+                      <% else %>
+                        <p>コメントにはプロフィール作成が必要です</p>
                       <% end %>
                     </div>
                 </div>
