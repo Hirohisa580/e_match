@@ -18,6 +18,9 @@
 .favorite__btn {
   font-size: 20px; 
 }
+.favorite__btn:hover {
+  text-decoration: none;
+}
 
 .favorite__btn_count {
   font-size: 20px;
@@ -28,12 +31,6 @@
 }
 .far {
   color: gray; 
-}
-.fa-heart:hover {
-  text-decoration: none;
-}
-.favorite__recommend {
-  font-size: 5px;
 }
 
 .profile__user{
