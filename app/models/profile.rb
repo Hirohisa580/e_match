@@ -4,7 +4,8 @@ class Profile < ApplicationRecord
   has_one_attached :image
   has_many :boards, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :schedule, dependent: :destroy
+  has_many :schedules, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :area

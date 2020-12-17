@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :boards
   has_many :comments
   has_many :scedules
+  has_many :favorites
 
   with_options presence: true do
     validates :first_name
@@ -31,9 +32,11 @@ class User < ApplicationRecord
 
   validates :phone_number, format: {with: /\A\d{10}$|^\d{11}\z/}
 
-  # VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
-  # validates :password, format: { with: VALID_PASSWORD_REGEX }
-
   validates :password, format: {with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]/}
-  # validates :password, format: {with: /\A[0-9]+\z/}
+
+
+  def already_favorited?(profile)
+    self.favorites.exists?(profile_id: profile.id)
+  end
+
 end

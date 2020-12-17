@@ -1,12 +1,41 @@
 .profile__wrapper{
-  min-height: calc(100vh - 161px);
-  background-image: url(https://ferret.akamaized.net/images/59e76165fafbd876ce00035c/original.jpg?1508335973);
+  /* min-height: calc(100vh - 161px); */
+  /* background-color: orange;  */
 }
+
 .profile__hedding{
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  margin-left: 40px;
 }
+
+.favorite__all {
+  width: 70px;
+  margin-left: 10px;
+}
+
+.favorite__btn {
+  font-size: 20px; 
+}
+
+.favorite__btn_count {
+  font-size: 20px;
+  font-weight: 400;
+}
+.fas {
+  color: red;
+}
+.far {
+  color: gray; 
+}
+.fa-heart:hover {
+  text-decoration: none;
+}
+.favorite__recommend {
+  font-size: 5px;
+}
+
 .profile__user{
   display: block;
   font-size: 16px;
