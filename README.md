@@ -37,6 +37,31 @@
 
 ## DEMOを載せる予定
 
+[ユーザー新規登録。](https://gyazo.com/f4de0db296465627cc581f8ace84f380)
+
+[プロフィール作成。](https://gyazo.com/643216b2c5d37bba9730d3464197af2e)
+
+[プロフィール編集。](https://gyazo.com/97534f56d63dc8be30d9f515e893e040)
+
+[プロフィール削除。](https://gyazo.com/d1f8f9e5d4739967634cb76cd30e66b8)
+
+[他ユーザーとのDM部屋を開設。](https://gyazo.com/af942ca82785f2ccd5c36c35411c6a0d)
+
+[マイページからDM部屋に移動し、メッセージを送る。ユーザーの選択。](https://gyazo.com/d051f18e3c174c96a38dc80ff9b6cedf)
+
+[マイページからスケジュール管理に移動し、スケジュールを登録。](https://gyazo.com/0464706db0e4053c68e14586289bae7e)
+
+[スケジュールを編集。削除。](https://gyazo.com/cecd19c24eb3982c2b80ef4e380ade58)
+[他ユーザーに「いいね」を付ける。「いいね」を外す。トップページでも反映。](https://gyazo.com/891880ccab6e0917853ad8b509150ee0)
+
+[掲示板を新規作成。](https://gyazo.com/10d5c6fb48aca5e9f55bdfa81346a3e3)
+
+[掲示板を編集。削除。](https://gyazo.com/a4cd8de64d90624b6df6f59f5259b9bb)
+
+[掲示板でコメント。コメント投稿者の名前のプロフィールページに移動。](https://gyazo.com/f452327d51b87250a411b34b94956215)
+
+[ジャンル別に検索。検索結果のユーザーのプロフィールに移動。](https://gyazo.com/74240025b86bc276ff7de582347876cc)
+
 
 ---
 
