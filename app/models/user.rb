@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :dms, through: :user_dms
   has_many :boards
   has_many :comments
-  has_many :scedules
+  has_many :schedules
   has_many :favorites
 
   with_options presence: true do
