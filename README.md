@@ -35,7 +35,7 @@
 
 ---
 
-## DEMOを載せる予定
+## 主要動作のDEMO動画
 
 [ユーザー新規登録。](https://gyazo.com/f4de0db296465627cc581f8ace84f380)
 
