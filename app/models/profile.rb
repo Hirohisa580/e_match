@@ -1,6 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :boards, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :schedules, dependent: :destroy
