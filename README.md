@@ -62,8 +62,9 @@
 * HTML &CSS（一部Bootstrap、FontAwesomeを利用）
 * Ruby
 * Ruby on Rails
-* JavaScrupt
+* JavaScrupt（Ajaxを利用した部分もあります）
 * AWS（EC2、S3）
+* Rspec（モデル単体テストコード、結合テストコード）
 
 ---
 
@@ -72,6 +73,7 @@
 * ビューの最適化（特にプロフィールを見やすくしたい）
 * 位置情報を利用した検索機能
 * 動画を載せられる機能
+* N+1問題を考慮したリファクタリング
 
 ---
 ---
